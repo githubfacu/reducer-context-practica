@@ -1,9 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
+import BackNavigateButton from '../components/BackNavigateButton'
+import ContactForm from '../components/ContactForm'
 
 export const AgregarContacto = () => {
 
-    const initialValor = {
+    const initialValue = {
         nombre: "",
         email: "",
         telefono: "",
@@ -11,42 +13,17 @@ export const AgregarContacto = () => {
         id: Math.floor(Math.random()*10000000)
     }
 
-    const [form, setForm] = useState(initialValor)
-    const { agregarContactos, state } = useContext(UserContext)
+    const { agregarContacto } = useContext(UserContext)
 
-    const handleChange = (e)=>{
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        })
-    }
-
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-
-        agregarContactos(form)
-        console.log(state);       
-    }
 
   return (
 
     <div>
         <h2>Agregar Contacto</h2>
 
-        <form onSubmit={onSubmit} style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-            <label htmlFor="name">Nombre</label>
-            <input value={form.nombre} name='nombre' onChange={handleChange} id='name' type="text" />
+        <BackNavigateButton />
 
-            <label htmlFor="mail">Email</label>
-            <input value={form.email} name='email' onChange={handleChange} id='mail' type="email" />
-
-            <label htmlFor="phone">Teléfono</label>
-            <input value={form.telefono} name='telefono' onChange={handleChange} id='phone' type="number" />
-
-            <button type='submit'>Agregar Contacto</button>
-        </form>
-
+        <ContactForm initialValue={initialValue} onSubmitForm={agregarContacto} type='Agregar'/>
     </div>
   )
 }

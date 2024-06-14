@@ -5,7 +5,7 @@ const GestionDeContactos = () => {
 
   return (
     <>
-        <h1 style={{margin: 0}}>Geatión de Contactos</h1>
+        <h1 style={{margin: 0}}>Gestión de Contactos</h1>
 
         <ul>
             <li><Link to={'/contactos'}>Contactos</Link></li>
