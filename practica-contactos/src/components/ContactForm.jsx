@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 const ContactForm = ({initialValue, onSubmitForm, type}) => {
 
-    const [initialVal, setInitialVal] = useState(initialValue)
-
-    const [form, setForm] = useState(initialVal)
+    const [form, setForm] = useState(initialValue)
 
     useEffect(() => {
-        console.log(initialValue);
-        console.log(initialVal);
-        setInitialVal(initialValue)
+        setForm(initialValue)
     }, [initialValue])
 
     const handleChange = (e)=>{

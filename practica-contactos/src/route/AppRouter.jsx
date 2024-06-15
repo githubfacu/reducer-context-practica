@@ -12,10 +12,11 @@ const AppRouter = () => {
     <div style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '100vw',
+        width: '100%',
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: '50px', paddingLeft: 0
+        paddingTop: '16px',
+        backgroundColor: '#eae2b7',
+        minHeight: '100vh',
     }}>
         <BrowserRouter>
             <Routes>
@@ -26,7 +27,6 @@ const AppRouter = () => {
             </Routes>
         </BrowserRouter>        
     </div>
-
   )
 }
 
