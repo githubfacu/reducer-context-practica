@@ -44,7 +44,7 @@ const ContactForm = ({initialValue, onSubmitForm, type}) => {
             <label htmlFor="phone">Teléfono</label>
             <input value={form.telefono} name='telefono' onChange={handleChange} id='phone' type="number" />
 
-            <button type='submit'>{type} Contacto</button>
+            <button data-testId='addbutton' type='submit'>{type} Contacto</button>
         </form>
     )
 }
